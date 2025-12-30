@@ -26,9 +26,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ AKIATCW45FGBKJLOOAVN }}
-          aws-secret-access-key: ${{ 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 }}
-          aws-region: ${{ ap-south-1 }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: SAM Validate
         run: sam validate
