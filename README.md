@@ -9,40 +9,6 @@ The architecture follows modern cloud-native and data engineering best practices
 
 ---
 
-## High-Level Architecture
-
-```
-
-Data Producer
-|
-v
-S3 Raw Bucket
-(ObjectCreated Event)
-|
-v
-Processing Lambda
-|
-v
-S3 Processed Bucket
-|
-v
-Glue Crawler → Glue Data Catalog
-|
-v
-Athena (SQL Analytics)
-|
-(EventBridge Daily Schedule)
-|
-v
-Report Lambda
-|
-v
-S3 Reports Bucket
-
-```
-
----
-
 ## Technologies Used
 
 - Amazon S3 – Raw, processed, and report storage
@@ -53,26 +19,6 @@ S3 Reports Bucket
 - AWS SAM (CloudFormation) – Infrastructure as Code
 - GitHub Actions – CI/CD pipeline
 - Node.js – Lambda runtime
-
----
-
-## Repository Structure
-
-```
-
-.
-├── template.yaml           # AWS SAM infrastructure definition
-├── src/
-│   ├── Function2/          # Processing Lambda
-│   │   └── index.js
-│   └── Function/           # Report Lambda
-│       └── index.js
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # CI/CD pipeline
-├── README.md
-
-```
 
 ---
 
