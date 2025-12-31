@@ -110,5 +110,3 @@ No manual AWS Console interaction is required.
 - No server management
 
 ---
-
-Just tell me what to do next.
